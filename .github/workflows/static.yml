@@ -24,7 +24,7 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    environment:
+    environment: https://github.com/Freshwater854/Should-I-take-this-class-
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
