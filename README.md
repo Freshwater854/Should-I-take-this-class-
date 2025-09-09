@@ -1,4 +1,4 @@
-# Math & Physics Readiness Assessment
+# Should I take this class?
 
 A simple, functional web application that assesses student readiness for advanced math and physics courses, providing personalized recommendations and AP score predictions.
 
