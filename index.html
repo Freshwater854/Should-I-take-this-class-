@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should I Take This Class?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home-page" class="card">
+            <h1>Should I Take This Class?</h1>
+            <p class="subtitle">
+                Discover your readiness for specific math and physics courses. 
+                Get personalized recommendations and score predictions.
+            </p>
+            <div class="button-container">
+                <button class="button" onclick="showQuizSelection()">Choose Your Course</button>
+            </div>
+        </div>
+
+        <!-- Quiz Selection Page -->
+        <div id="quiz-selection-page" class="card" style="display: none;">
+            <h1>Select Your Course</h1>
+            <p class="subtitle">Choose the course you want to assess your readiness for:</p>
+            
+            <div class="quiz-grid">
+                <div class="quiz-option" onclick="startQuiz('algebra1')">
+                    <h3>Algebra 1</h3>
+                    <p>Basic algebraic concepts and problem solving</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('algebra2')">
+                    <h3>Algebra 2</h3>
+                    <p>Advanced algebraic functions and equations</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('geometry')">
+                    <h3>Geometry</h3>
+                    <p>Shapes, proofs, and spatial reasoning</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('precalc')">
+                    <h3>AP Precalculus</h3>
+                    <p>Trigonometry, functions, and advanced algebra</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('calc-ab')">
+                    <h3>AP Calculus AB</h3>
+                    <p>Differential and integral calculus</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('calc-bc')">
+                    <h3>AP Calculus BC</h3>
+                    <p>Advanced calculus with series and sequences</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('physics1')">
+                    <h3>AP Physics 1</h3>
+                    <p>Algebra-based mechanics and waves</p>
+                </div>
+                
+                <div class="quiz-option" onclick="startQuiz('physics2')">
+                    <h3>AP Physics 2</h3>
+                    <p>Algebra-based electricity, magnetism, and fluids</p>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button class="button secondary" onclick="goHome()">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz-page" class="card" style="display: none;">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            
+            <h2 id="question-counter">Question 1 of 10</h2>
+            
+            <div class="question">
+                <div id="question-text" class="question-text"></div>
+                <div id="question-options" class="options"></div>
+            </div>
+            
+            <div class="button-container">
+                <button id="prev-btn" class="button secondary" onclick="previousQuestion()" disabled>Previous</button>
+                <button id="next-btn" class="button" onclick="nextQuestion()" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="card results" style="display: none;">
+            <h1>Your Readiness Assessment Results</h1>
+            
+            <div id="score-display" class="score">0/100</div>
+            
+            <div id="recommendation" class="recommendation">
+                <h2 id="rec-title"></h2>
+                <p id="rec-message"></p>
+                <p><strong>Expected Study Time:</strong> <span id="rec-effort"></span></p>
+            </div>
+            
+            <div class="ap-prediction">
+                <h3 id="prediction-title">Score/Grade Prediction</h3>
+                <p id="prediction-text">Based on your current readiness, you could expect to score in the <strong id="ap-range"></strong> range with appropriate preparation and study time.</p>
+                <p><em>Note: This is a preliminary assessment. Actual scores depend on many factors including course content, teaching quality, and individual effort.</em></p>
+            </div>
+            
+            <div class="tips">
+                <h4>Personalized Study Recommendations</h4>
+                <ul id="study-tips"></ul>
+            </div>
+            
+            <div class="button-container">
+                <button class="button" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> This assessment is for educational purposes only and should not be the sole factor in making academic decisions. Consult with teachers, counselors, and academic advisors for personalized guidance.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
